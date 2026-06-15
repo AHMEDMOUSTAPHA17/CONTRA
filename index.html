@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الفلاح للتقسيط</title>
+  <script src="/CONTRA/assets/js/tailwind.js"></script>
+  <link href="/CONTRA/assets/css/fonts.css" rel="stylesheet">
+  <script src="/CONTRA/assets/js/html2pdf.bundle.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: 'var(--primary-color, #10b981)',
+          },
+          fontFamily: {
+            tajawal: ['Tajawal', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --primary-color: #10b981;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f3f4f6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark body {
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    @media print {
+
+      /* إخفاء ترويسة وتذييل المتصفح الافتراضية عبر تصفير هامش الصفحة */
+      @page {
+        size: A4;
+        margin: 0mm;
+      }
+
+      /* إخفاء كل شيء في الموقع */
+      body * {
+        visibility: hidden !important;
+      }
+
+      /* إظهار منطقة الطباعة وتطبيق الهامش المطلوب داخلياً */
+      #printable-area,
+      #printable-area * {
+        visibility: visible !important;
+      }
+
+      #printable-area {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        display: block !important;
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+        height: auto !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* إجبار كل صفحة على أن تكون صفحة منفصلة */
+      .contract-page {
+        display: block !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        background: white !important;
+        width: 100% !important;
+      }
+
+      .contract-page:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+
+      /* منع قص محتوى الجداول */
+      table,
+      tr,
+      td {
+        page-break-inside: avoid !important;
+      }
+
+      /* إخفاء العناصر غير الضرورية داخل العقد */
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+
+
+  <script type="module" crossorigin src="/CONTRA/assets/index-C08w71Lu.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
