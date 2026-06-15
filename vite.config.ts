@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    base: "./",
+    base: "CONTRA",
     server: {
       port: 5173,
       host: "0.0.0.0",
