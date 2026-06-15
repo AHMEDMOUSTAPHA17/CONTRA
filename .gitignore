@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-electron/
+.vite/
+coverage/
+logs/
+*.log
+.env
+.env.local
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
